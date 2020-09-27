@@ -1,7 +1,7 @@
 #	EC601_ Project 2 Part 1
 #	EC601 Product Design
 #	Ken Krebs
-#   9/26/20
+#       9/26/20
 #	--------------
 #	This program utilizes twitters API and has defined function for accessing timelines, users, hashtags
 #	using tweepy.  
