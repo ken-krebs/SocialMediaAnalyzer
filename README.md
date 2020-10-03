@@ -14,19 +14,19 @@ The current list of companies available for analysis are listed below.
 The desired *stock symbol* from the chart can serve as the input
 <details>
 <summary>"Companies and their Stock Symbol"</summary>
-        AAPL : Apple Inc.
-        TSLA : Tesla Inc. 
-        TWTR : Twitter Inc. 
-        PYPL: PayPal Holdings Inc.
-        PEP: PepsiCo, Inc.
-        VZ : Verizon Communications Inc.
-        GM : General Motors Company
-        SPOT :  Spotify Technology SA
-        AMZN : Amazon.com, Inc.
-        FB : Facebook, Inc. Common Stock
-        GOOGL : Alphabet Inc Class A (Google)
-        BOX : Box Inc
-        MSFT : Microsoft Corporation
+        - AAPL : Apple Inc.
+        - TSLA : Tesla Inc. 
+        - TWTR : Twitter Inc. 
+        - PYPL: PayPal Holdings Inc.
+        - PEP: PepsiCo, Inc.
+        - VZ : Verizon Communications Inc.
+        - GM : General Motors Company
+        - SPOT :  Spotify Technology SA
+        - AMZN : Amazon.com, Inc.
+        - FB : Facebook, Inc. Common Stock
+        - GOOGL : Alphabet Inc Class A (Google)
+        - BOX : Box Inc
+        - MSFT : Microsoft Corporation
 </details>
 
 **Output**
