@@ -18,12 +18,12 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
-import yfinance as yf 
-import datetime
+import stock_correlations as stock
+import get_ceo_name as ceo
 
 
 #Twitter API credentials
-consumer_key = "your consumer key"
+consumer_key = "you key"
 consumer_secret = "your consumer secret"
 access_token = "your access token"
 token_secret = "your token secret"
@@ -65,35 +65,6 @@ def save_to_json(user_tweets):
     
 
 
-## This function turns gets the CEO's twitter handle and executes the twitter API functions
-# @params -- specific company stock symbol to inspect
-# 
-def get_ceo_name(company):
-
-    company_ceo = {
-
-        "AAPL": "@tim_cook",
-        "TSLA": "@elonmusk",
-        "TWTR": "@jack",
-        "PYPL": "@Dan_Schulman",
-        "PEP": "@ramonlaguarta",
-        "VZ" : "@hansvestberg",
-        "GM" : "@mtbarra",
-        "SPOT" :  "@eldsjal",
-        "AMZN" : "@jeffbezos",
-        "FB" : "@finkd",
-        "GOOGL" : "@sundarpichai",
-        "BOX" : "@levie",
-        "MSFT" : "@satyanadella"
-    }
-    
-    twitter_name = company_ceo[company]
-    print(twitter_name)
-    get_user_tweets(twitter_name, company, 200)
-    
-
-
-
 # This function turns a string of text into a sentiment analysis score
 # @params --  the specific text as a string that is to be analyzed for sentiment. 
 # @returns an overall score of sentiment on a scale from 1 (very positive) to -1 (very negative). Neutral is defined as 
@@ -113,25 +84,15 @@ def analyze_text_sentiment(tweet, company):
     if sentiment.score > .85 or sentiment.score < -.25:
         print('Text: {}'.format(tweet.full_text))
         print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
-        export_tweet_stock_correlations(tweet, company)
+        stock.export_tweet_stock_correlations(tweet.created_at, company)
         
         
-# This function takes the strongly sentimented tweet and prints out stock information day of the tweet
-# @params --  tweet, company input
-# @returns hourly stock price information for the date of the tweet. 
-# 
-def export_tweet_stock_correlations(tweet, company):
-
-    company_stock = yf.Ticker(company)
-    print(company_stock.history(start = tweet.created_at, end = tweet.created_at+datetime.timedelta(days=1), interval = "1h"))
-    
-
-
 
 
 
 if __name__ == '__main__':
 
     name = input ("Enter company to analyze: ")
-    get_ceo_name(name)
+    twitter_name = ceo.get_ceo_name(name)
+    get_user_tweets(twitter_name, name, 200)
     
