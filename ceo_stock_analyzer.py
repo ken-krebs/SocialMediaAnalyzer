@@ -23,7 +23,8 @@ import get_ceo_name as ceo
 
 
 #Twitter API credentials
-consumer_key = "you key"
+#Twitter API credentials
+consumer_key = "your consumer key"
 consumer_secret = "your consumer secret"
 access_token = "your access token"
 token_secret = "your token secret"
@@ -84,6 +85,7 @@ def analyze_text_sentiment(tweet, company):
     if sentiment.score > .85 or sentiment.score < -.25:
         print('Text: {}'.format(tweet.full_text))
         print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+        print("Tweet Date: ", tweet.created_at)
         stock.export_tweet_stock_correlations(tweet.created_at, company)
         
         
