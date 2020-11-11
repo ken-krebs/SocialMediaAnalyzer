@@ -8,6 +8,11 @@ Although there are many aspects that go into a company's evaluation and stock pr
 The scope of the tool I designed is limited to active twitter using CEO's for more popular companies in the S&P500 including Apple, Tesla, Twitter, PayPal etc. While many CEO's twitter are mostly positive, the program returns tweets that have a very strong positive sentiment and also medium to strong negative sentiment. Along with the tweets, the program also returns companies stock performance by hour following the tweet. 
 
 # Use
+**Running Social Media Analyzer**
+To start the program, run the following command in your command line. 
+```python ceo_stock_analyzer.py```
+ 
+
 **Input**
 Upon initializing the program, the program will request a company to analyze. 
 The current list of companies available for analysis are listed below. 
