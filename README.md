@@ -9,8 +9,11 @@ The scope of the tool I designed is limited to active twitter using CEO's for mo
 
 # Use
 **Running Social Media Analyzer**
-To start the program, run the following command in your command line. 
-```python ceo_stock_analyzer.py```
+To start the program, run the following command in your command line:
+
+```
+python ceo_stock_analyzer.py
+```
  
 
 **Input**
